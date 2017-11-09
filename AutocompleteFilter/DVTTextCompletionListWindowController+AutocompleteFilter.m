@@ -24,6 +24,7 @@
                                                          objc_setAssociatedObject(self, (void*)1, @(e.modifierFlags), OBJC_ASSOCIATION_ASSIGN);
                                                          return e;
                                                      }];
+    
     objc_setAssociatedObject(self, 0, token, OBJC_ASSOCIATION_RETAIN);
 }
 
@@ -43,23 +44,22 @@
         }
     }
 
-    self.session.filteredCompletionsAlpha = filteredArray;
-    [table reloadData];
+    if (filteredArray.count) {
+        self.session.filteredCompletionsAlpha = filteredArray;
+        [table reloadData];
+    } else {
+        [self dismissController:nil];
+    }
 }
 
 - (void)_fa_filterCompletionsBasedOnModifierFlags:(NSEventModifierFlags)flags {
-    if ([self _fa_wasModifierJustPressed:NSEventModifierFlagControl in:flags]) {
+    if ([self _fa_wasModifierJustPressed:NSEventModifierFlagOption in:flags]) {
         [self _fa_filterCompletionsToSymbolKind:[DVTSourceCodeSymbolKind enumConstantSymbolKind]];
         return;
     }
 
-    if ([self _fa_wasModifierJustPressed:NSEventModifierFlagOption in:flags]) {
-        [self _fa_filterCompletionsToSymbolKind:[DVTSourceCodeSymbolKind typedefSymbolKind]];
-        return;
-    }
-    
     if ([self _fa_wasModifierJustPressed:NSEventModifierFlagCommand in:flags]) {
-        [self _fa_filterCompletionsToSymbolKind:[DVTSourceCodeSymbolKind classSymbolKind]];
+        [self _fa_filterCompletionsToSymbolKind:[DVTSourceCodeSymbolKind typedefSymbolKind]];
         return;
     }
 }

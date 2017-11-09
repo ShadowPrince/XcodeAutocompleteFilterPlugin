@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0CDA661FB4DDE9002B89DC /* DVTTextCompletionSession+AutocompleteFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0CDA651FB4DDE9002B89DC /* DVTTextCompletionSession+AutocompleteFilter.m */; };
 		3B10B23D1FB24D5F0062A454 /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B10B23C1FB24D5F0062A454 /* IDEFoundation.framework */; };
 		580BC1EC181243D600D53F1F /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580BC1EA181243D600D53F1F /* DVTFoundation.framework */; };
 		580BC1ED181243D600D53F1F /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580BC1EB181243D600D53F1F /* DVTKit.framework */; };
@@ -22,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		1C5CF4601918DB6200AF581C /* NSArray+FirstObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FirstObject.h"; sourceTree = "<group>"; };
+		3B0CDA631FB4DDC5002B89DC /* DVTTextCompletionSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTTextCompletionSession.h; sourceTree = "<group>"; };
+		3B0CDA641FB4DDE9002B89DC /* DVTTextCompletionSession+AutocompleteFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTTextCompletionSession+AutocompleteFilter.h"; sourceTree = "<group>"; };
+		3B0CDA651FB4DDE9002B89DC /* DVTTextCompletionSession+AutocompleteFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DVTTextCompletionSession+AutocompleteFilter.m"; sourceTree = "<group>"; };
 		3B0DD8441FB398DC00DE800B /* DVTTextCompletionSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTTextCompletionSession.h; sourceTree = "<group>"; };
 		3B0DD8451FB398DC00DE800B /* IDESourceKitCompletionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDESourceKitCompletionItem.h; sourceTree = "<group>"; };
 		3B0DD8461FB3994200DE800B /* DVTSourceCodeSymbolKind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTSourceCodeSymbolKind.h; sourceTree = "<group>"; };
@@ -31,7 +35,7 @@
 		580BC1EB181243D600D53F1F /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = ../../../../Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework; sourceTree = "<group>"; };
 		58501C0418165B0600AA3179 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		58501C0518165B0600AA3179 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
-		58C3C24318110DB70031D9CD /* AutocompleteFilter.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AutocompleteFilter.xcplugin; path = AutocompleteFilter.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C3C24318110DB70031D9CD /* AutocompleteFilter.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutocompleteFilter.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C3C24918110DB70031D9CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58C3C24A18110DB70031D9CD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		58C3C24B18110DB70031D9CD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -73,6 +77,7 @@
 				3B0DD8471FB3994200DE800B /* DVTTextCompletionListWindowController.h */,
 				3B0DD8441FB398DC00DE800B /* DVTTextCompletionSession.h */,
 				3B0DD8451FB398DC00DE800B /* IDESourceKitCompletionItem.h */,
+				3B0CDA631FB4DDC5002B89DC /* DVTTextCompletionSession.h */,
 			);
 			name = "Xcode Headers";
 			path = ../XcodeHeaders;
@@ -128,6 +133,8 @@
 				58C3C259181128140031D9CD /* AutocompleteFilter.m */,
 				657EB23E189D76DC00B04AC0 /* DVTTextCompletionListWindowController+AutocompleteFilter.h */,
 				657EB23F189D76DC00B04AC0 /* DVTTextCompletionListWindowController+AutocompleteFilter.m */,
+				3B0CDA641FB4DDE9002B89DC /* DVTTextCompletionSession+AutocompleteFilter.h */,
+				3B0CDA651FB4DDE9002B89DC /* DVTTextCompletionSession+AutocompleteFilter.m */,
 			);
 			path = AutocompleteFilter;
 			sourceTree = "<group>";
@@ -236,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0CDA661FB4DDE9002B89DC /* DVTTextCompletionSession+AutocompleteFilter.m in Sources */,
 				65E6847418F897400093A671 /* NSBundle+LSLProperties.m in Sources */,
 				58501C0618165B0600AA3179 /* JRSwizzle.m in Sources */,
 				58C3C25A181128140031D9CD /* AutocompleteFilter.m in Sources */,

@@ -6,9 +6,10 @@ Xcode 8 plugin that filters autocompletion output to certain symbol types (mostl
 
 Engage autocompletion (so the list shows up) and press:
 
-* `Control` to only show enums
-* `Command` to only show classes
-* `Option` to only show types
+* `Command` to only show types
+* `Option` to only show enums
+
+Also everything starting with `accessibility` is sorted-out too.
 
 ## Installation
 

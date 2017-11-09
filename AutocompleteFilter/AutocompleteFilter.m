@@ -2,6 +2,7 @@
 
 #import <objc/runtime.h>
 #import "DVTTextCompletionListWindowController+AutocompleteFilter.h"
+#import "DVTTextCompletionSession+AutocompleteFilter.h"
 
 @implementation AutocompleteFilter
 
@@ -25,7 +26,9 @@
 }
 
 + (void) swizzleMethods {
+    NSLog(@"FUCK THAT");
     [DVTTextCompletionListWindowController fa_swizzleMethods];
+    [DVTTextCompletionSession fa_swizzleMethods];
 }
 
 @end
