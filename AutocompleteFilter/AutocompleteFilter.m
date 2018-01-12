@@ -26,7 +26,6 @@
 }
 
 + (void) swizzleMethods {
-    NSLog(@"FUCK THAT");
     [DVTTextCompletionListWindowController fa_swizzleMethods];
     [DVTTextCompletionSession fa_swizzleMethods];
 }
