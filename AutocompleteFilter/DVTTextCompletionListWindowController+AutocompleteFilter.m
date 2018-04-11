@@ -21,16 +21,16 @@
     id token = [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskFlagsChanged
                                                      handler:^NSEvent * _Nullable(NSEvent *e) {
                                                          [self _fa_filterCompletionsBasedOnModifierFlags:e.modifierFlags];
-                                                         objc_setAssociatedObject(self, (void*)1, @(e.modifierFlags), OBJC_ASSOCIATION_ASSIGN);
+                                                         objc_setAssociatedObject(self, (void*)101, @(e.modifierFlags), OBJC_ASSOCIATION_ASSIGN);
                                                          return e;
                                                      }];
     
-    objc_setAssociatedObject(self, 0, token, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, (void*)100, token, OBJC_ASSOCIATION_RETAIN);
 }
 
 - (void)_fa_filterCompletionsToSymbolKind:(DVTSourceCodeSymbolKind *)filterKind {
     NSTableView *table = [self valueForKey:@"_completionsTableView"];
-    NSMutableArray *filteredArray = self.session.filteredCompletionsAlpha.mutableCopy;
+    NSMutableArray *filteredArray = self.dataSource.filteredCompletionsAlpha.mutableCopy;
 
     for (NSInteger i = (NSInteger)filteredArray.count - 1; i >= 0; i--) {
         id item = filteredArray[(NSUInteger)i];
@@ -45,7 +45,7 @@
     }
 
     if (filteredArray.count) {
-        self.session.filteredCompletionsAlpha = filteredArray;
+        self.dataSource.filteredCompletionsAlpha = filteredArray;
         [table reloadData];
     } else {
         [self dismissController:nil];
@@ -65,7 +65,7 @@
 }
 
 - (BOOL)_fa_wasModifierJustPressed:(NSEventModifierFlags)flag in:(NSEventModifierFlags)flags {
-    NSEventModifierFlags previousFlags = [objc_getAssociatedObject(self, (void*)1) unsignedIntegerValue];
+    NSEventModifierFlags previousFlags = [objc_getAssociatedObject(self, (void*)101) unsignedIntegerValue];
     return flags & flag && !(previousFlags & flag);
 }
 

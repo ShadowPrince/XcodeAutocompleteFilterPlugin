@@ -12,21 +12,21 @@
     static dispatch_once_t onceToken;
     if ([currentApplicationName isEqual:@"Xcode"]) {
         dispatch_once(&onceToken, ^{
-            [[NSNotificationCenter defaultCenter] addObserver: self
-                                                     selector: @selector(applicationDidFinishLaunching:)
-                                                         name: NSApplicationDidFinishLaunchingNotification
-                                                       object: nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(applicationDidFinishLaunching:)
+                                                         name:NSApplicationDidFinishLaunchingNotification
+                                                       object:nil];
         });
     }
 }
 
-+ (void) applicationDidFinishLaunching: (NSNotification *) notification {
-    [[NSNotificationCenter defaultCenter] removeObserver: self name: NSApplicationDidFinishLaunchingNotification object: nil];
++ (void)applicationDidFinishLaunching:(NSNotification *)notification {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationDidFinishLaunchingNotification object:nil];
+    
     [self swizzleMethods];
 }
 
-+ (void) swizzleMethods {
-    NSLog(@"FUCK THAT");
++ (void)swizzleMethods {
     [DVTTextCompletionListWindowController fa_swizzleMethods];
     [DVTTextCompletionSession fa_swizzleMethods];
 }

@@ -46,7 +46,7 @@
 @property __weak DVTBorderedView *contentView; // @synthesize contentView=_contentView;
 @property(readonly) DVTViewController<DVTInvalidation> *infoContentViewController; // @synthesize infoContentViewController=_infoContentViewController;
 @property(nonatomic) int hideReason; // @synthesize hideReason=_hideReason;
-@property(readonly) DVTTextCompletionSession *session; // @synthesize session=_session;
+@property(readonly) DVTTextCompletionSession *dataSource; // @synthesize session=_session;
 @property(readonly) BOOL showingWindow; // @synthesize showingWindow=_showingWindow;
 @property(readonly) NSScrollView *completionsScrollView; // @synthesize completionsScrollView=_completionsScrollView;
 @property(readonly) NSString *debugStateString;
