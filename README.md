@@ -1,6 +1,8 @@
 ## AutocompleteFilter
 
-Xcode 8 plugin that filters autocompletion output to certain symbol types (mostly to filter out garbage like defines and such).
+Xcode 9 plugin that filters autocompletion output to certain symbol types (mostly to filter out garbage like defines and such).
+
+For Xcode 8 use commit `3775dd2658a5aaed4364c1883e6e4765c5c03bbe`.
 
 ## Usage
 
